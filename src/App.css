@@ -1,0 +1,103 @@
+
+body {
+  /* Common global colors */
+  --pcolor: #673ab7;
+  --pcolor-light: #8561c5;
+  --pcolor-blur: #f4eeff53;
+
+  --p-fr-color: #FFF;
+
+  --scolor: #f50057;
+  --scolor-light: #f73378;
+
+  --s-fr-color: #FFF;
+
+  --surface-bg-color: #FFF;
+  --surface-fg-color: #444;
+  --surface-fg-blur: #888;
+  --surface-fg-minor-blur: #DDD;
+
+  --base-margin: 12px;
+
+  --default-icon-size: 1.8em;
+
+  /* Color utils */
+  --red: #f44336;
+  --pink: #e91e63;
+  --purple: #9c27b0;
+  --deeppurple: #673ab7;
+  --indigo: #3f51b5;
+  --blue: #2196f3;
+  --lightblue: #03a9f4;
+  --cyan: #00bcd4;
+  --teal: #009688;
+  --green: #4caf50;
+  --lightgreen: #8bc34a;
+  --lime: #cddc39;
+  --yellow: #ffeb3b;
+  --amber: #ffc107;
+  --orange: #ff9800;
+  --deeporange: #ff5722;
+
+  /* Fonts utils */
+  --pfont: "Comfortaa", Verdana, Helvetica, Arial;
+
+  /* Device screen scale */
+  --xsmall-screen: 310px;
+  --small-screen: 768px;
+  --medium-screen: 992px;
+  --large-screen: 1200px;
+}
+
+body.dark {
+  --pcolor: var(--pcolor-light);
+  --scolor: #ab003c;
+
+  --surface-bg-color: #333;
+  --surface-fg-color: #EEE;
+  --surface-fg-blur: #AAA;
+  --surface-fg-minor-blur: #222;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  font-family: var(--pfont);
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+  padding: 8px;
+}
+h1 {
+  font-size: 2.4em;
+}
+h2 {
+  font-size: 2.3em;
+}
+h3 {
+  font-size: 2em;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  min-width: 6em;
+  height: 2em;
+  font-family: var(--sfont);
+  background-color: var(--pcolor);
+  color: var(--p-fr-color);
+  border: none;
+  border-radius: 6px;
+  line-height: 0.8em;
+  outline: 0;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.1s linear;
+}
+button:active {
+  background-color: var(--surface-fg-color);
+}
