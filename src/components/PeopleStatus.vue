@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="relate">
-      <div class="instance" v-for="status in relateStatus" v-bind:key="status.src">
+      <div class="instance image-container" v-for="(status, i) in relateStatus" v-bind:key="i">
         <Avatar v-bind:src="status.src" v-bind:uname="status.uname" />
       </div>
     </div>
@@ -83,7 +83,6 @@
     height: 4.4em;
     padding: 8px;
     border-radius: 50px;
-    transition: transform 0.15s ease;
   }
   .people-status .self {
     padding-right: 2px;
@@ -97,11 +96,10 @@
     border: 2px solid #CCC;
     border-radius: inherit;
     box-sizing: border-box;
-    border: 3px dashed var(--surface-fg-minor-blur);
-    transition: background-color 0.1s linear;
+    border: 3px dashed var(--front-fg-minor-blur);
   }
   .people-status .self .instance .ic:active {
-    background-color: var(--surface-fg-minor-blur);
+    background-color: var(--front-fg-minor-blur);
   }
   .people-status .self .instance .ic svg {
     width: 2em;
@@ -111,14 +109,5 @@
   }
   .people-status .relate {
     display: flex;
-  }
-  .people-status :not(.self) .instance .avatar img {
-    transition: filter 0.1s linear;
-  }
-  .people-status :not(.self) .instance:active {
-    transform: scale(0.92);
-  }
-  .people-status :not(.self) .instance:active .avatar img {
-    filter: brightness(0.75);
   }
 </style>

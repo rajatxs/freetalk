@@ -1,33 +1,24 @@
 import Vue from 'vue'
 import App from './App.vue'
-import Home from './views/Home'
-import Auth from './views/Auth'
 import VueRouter from 'vue-router'
+import router from './router'
 
-Vue.use(VueRouter)
+import { auth } from './firebase-init'
 
-const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: Home
-  },
-  {
-    path: '/auth',
-    name: 'auth',
-    component: Auth
+Vue.use(VueRouter);
+
+Vue.config.productionTip = true;
+
+auth.onAuthStateChanged((user) => {
+  if (user) {
+    if (router.currentRoute.path === '/auth')
+      router.replace("/");
+  } else {
+    router.replace('/auth');
   }
-]
-
-const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
-})
-
-Vue.config.productionTip = true
+});
 
 new Vue({
   router,
   render: h => h(App)
-}).$mount('#app')
+}).$mount('#app');

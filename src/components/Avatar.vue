@@ -8,17 +8,17 @@
 </template>
 
 <script>
-export default {
-  name: 'Avatar',
+  export default {
+    name: 'Avatar',
 
-  props: {
-    src: {
-      required: true,
-      type: String
-    },
-    uname: String
+    props: {
+      src: {
+        required: true,
+        type: String
+      },
+      uname: String
+    }
   }
-}
 </script>
 
 <style>

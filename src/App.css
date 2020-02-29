@@ -1,23 +1,33 @@
 
+@import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 body {
   /* Common global colors */
   --pcolor: #673ab7;
   --pcolor-light: #8561c5;
   --pcolor-blur: #f4eeff53;
+  --pcolor-focus: #e0ceff;
 
   --p-fr-color: #FFF;
-
-  --scolor: #f50057;
-  --scolor-light: #f73378;
-
-  --s-fr-color: #FFF;
 
   --surface-bg-color: #FFF;
   --surface-fg-color: #444;
   --surface-fg-blur: #888;
   --surface-fg-minor-blur: #DDD;
 
+  --front-fg-minor-blur: #DDD;
+  --rear-minor-blur: #DDD;
+
   --base-margin: 12px;
+
+  --button-shadow-color: var(--surface-fg-minor-blur);
+  --button-active-bg: var(--surface-fg-color);
+
+  --input-bg: #DDD;
+  --input-fg: #222;
+  --input-outline-color: var(--pcolor);
+  --input-fg-blur: var(--surface-fg-blur);
 
   --default-icon-size: 1.8em;
 
@@ -41,6 +51,7 @@ body {
 
   /* Fonts utils */
   --pfont: "Comfortaa", Verdana, Helvetica, Arial;
+  --sfont: "Roboto", Verdana, Helvetica, Arial;
 
   /* Device screen scale */
   --xsmall-screen: 310px;
@@ -49,15 +60,10 @@ body {
   --large-screen: 1200px;
 }
 
-body.dark {
-  --pcolor: var(--pcolor-light);
-  --scolor: #ab003c;
-
-  --surface-bg-color: #333;
-  --surface-fg-color: #EEE;
-  --surface-fg-blur: #AAA;
-  --surface-fg-minor-blur: #222;
+.red-text {
+  color: var(--red);
 }
+
 
 body {
   padding: 0;
@@ -65,6 +71,8 @@ body {
   width: 100%;
   height: 100vh;
   font-family: var(--pfont);
+  background-color: var(--surface-bg-color);
+  color: var(--surface-fg-color);
 }
 
 h1, h2, h3, h4 {
@@ -80,24 +88,53 @@ h2 {
 h3 {
   font-size: 2em;
 }
+h4 {
+  font-size: 1.15em;
+}
 a {
   color: inherit;
   text-decoration: none;
+  user-select: none;
   -webkit-tap-highlight-color: transparent;
 }
 button {
-  min-width: 6em;
-  height: 2em;
-  font-family: var(--sfont);
+  margin: 4px;
+  min-width: 6.5em;
+  height: 2.2em;
+  font-family: var(--pfont);
+  font-size: 1.15em;
   background-color: var(--pcolor);
   color: var(--p-fr-color);
   border: none;
-  border-radius: 6px;
+  border-radius: 12px;
   line-height: 0.8em;
   outline: 0;
   -webkit-tap-highlight-color: transparent;
   transition: background-color 0.1s linear;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-drag: none;
 }
 button:active {
-  background-color: var(--surface-fg-color);
+  background-color: var(--button-active-bg);
 }
+
+.image-container {
+  transition: transform 0.15s ease;
+}
+.image-container:active {
+  transform: scale(0.92);
+}
+.image-container img {
+  transition: filter 0.1s linear;
+}
+.image-container:active img {
+    filter: brightness(0.75);
+}
+
+/* @media screen and (min-width: 310px) {}
+@media screen and (min-width: 768px) {}
+@media screen and (min-width: 992px) {}
+@media screen and (min-width: 1200px) {} */
