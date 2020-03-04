@@ -1,22 +1,24 @@
 <template>
   <a class="profile setting-context">
-    <Avatar src="https://lh3.googleusercontent.com/a-/AAuE7mALVW8QPSIGpCDFBEbv4M2Dfly5W7YTPe3UKMOfZw" uname="Rajat Sharma" />
+    <Avatar :src="photoURL" :uname="displayName" />
     <div class="metadata">
-      <div class="display-name"><h4>Rajat Sharma</h4></div>
-      <div class="email"><small>rajat.prototype@gmail.com</small></div>
+      <div class="display-name"><h4>{{ displayName }}</h4></div>
+      <div class="email"><small>{{ email }}</small></div>
     </div>
   </a>
 </template>
 
 <script>
   import Avatar from './Avatar'
+  import { mapGetters } from 'vuex'
 
   export default {
     name: 'profile-setting-context',
 
     components: {
       Avatar
-    }
+    },
+    computed: mapGetters(['displayName', 'email', 'photoURL'])
   }
 </script>
 

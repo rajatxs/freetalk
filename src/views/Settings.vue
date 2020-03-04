@@ -4,11 +4,16 @@
     <div class="context-wrapper">
       <profile-setting-context />
       <hr />
-      <setting-context 
+      <!-- <setting-context 
         class="red-text"
         label="Log out" 
         controller="checkbox"
-        :oncheck="updateAppTheme" />
+        :tap="logOut"
+        :oncheck="updateAppTheme" /> -->
+      <setting-context 
+        class="red-text"
+        label="Log out" 
+        :tap="logOut" />
     </div>
   </section>
 </template>
@@ -17,6 +22,7 @@
   import Header from '@/components/Header'
   import ProfileSettingContext from '@/components/ProfileSettingContext'
   import SettingContext from '@/components/SettingContext'
+  import { auth } from '../firebase-init'
 
   export default {
     name: 'app-settings',
@@ -27,10 +33,8 @@
       'setting-context': SettingContext
     },
     methods: {
-      updateAppTheme(ev) {
-        const { log } = console;
-
-        log(ev);
+      logOut() {
+        return auth.signOut();
       }
     }
   }

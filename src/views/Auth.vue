@@ -18,7 +18,7 @@
 <script>
 import ChatElevationImage from '@/assets/auth-chat-elevation.png'
 import firebase from 'firebase'
-import { auth } from '../firebase-init'
+import { auth } from '@/firebase-init'
 
 export default {
   name: 'app-auth',
@@ -48,7 +48,7 @@ export default {
 .app-auth .elevation {
   display: flex;
   justify-content: center;
-  padding: 1em;
+  padding: 1em 8px;
 }
 .app-auth .elevation img {
   width: 22em;
@@ -57,6 +57,7 @@ export default {
 .app-auth content {
   padding: 1em 3em;
   text-align: center;
+  line-height: 1.4em;
 }
 .app-auth .actions {
   display: flex;

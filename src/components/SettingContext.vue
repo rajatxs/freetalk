@@ -1,5 +1,5 @@
 <template>
-  <div class="setting-context">
+  <a class="setting-context" @click="tap">
     <div class="action-label">
       <big>{{ label }}</big>
     </div>
@@ -9,7 +9,7 @@
         <span class="slider"></span>
       </label>
     </div>
-  </div>
+  </a>
 </template>
 
 <script>
@@ -25,6 +25,10 @@
         required: false,
         type: String
       },
+      tap: {
+        required: false,
+        type: Function
+      }
     },
     methods: {
       isset(ev) {
@@ -39,6 +43,11 @@
     display: flex;
     justify-content: space-between;
     padding: 2px var(--base-margin);
+    border-radius: 6px;
+    transition: 0.1s background-color linear;
+  }
+  .setting-context:active {
+    background-color: var(--front-fg-minor-blur);
   }
   .setting-context .action-label {
     padding: 8px;
