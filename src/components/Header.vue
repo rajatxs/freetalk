@@ -5,14 +5,14 @@
     </div>
     <div v-if="profilebadge" class="badge">
       <router-link to="/settings" class="image-container">
-        <img v-bind:src="profileBadgeImg" />
+        <img :src="photoURL" />
       </router-link>
     </div>
   </header>
 </template>
 
 <script>
-  import Me from '@/assets/me.jpg'
+  import { mapGetters } from 'vuex'
 
   export default {
     name: "app-header",
@@ -27,11 +27,7 @@
         default: false
       }
     },
-    data() {
-      return {
-        profileBadgeImg: Me
-      }
-    }
+    computed: mapGetters(['photoURL'])
   }
 </script>
 

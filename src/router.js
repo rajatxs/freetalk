@@ -1,4 +1,5 @@
 
+import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import Home from './views/Home'
@@ -6,6 +7,9 @@ import Auth from './views/Auth'
 import Settings from './views/Settings'
 import Chats from './views/Chats'
 import Userprofile from './views/Userprofile'
+import Peoples from './views/Peoples'
+
+Vue.use(VueRouter);
 
 const routes = [
   {
@@ -32,6 +36,11 @@ const routes = [
     path: '/user',
     name: 'userprofile',
     component: Userprofile
+  },
+  {
+    path: '/peoples',
+    name: 'peoples',
+    component: Peoples
   }
 ];
 

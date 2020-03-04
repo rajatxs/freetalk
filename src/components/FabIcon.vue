@@ -1,10 +1,10 @@
 <template>
-  <button>
+  <router-link tag="button" to="/peoples">
     <span class="ic">
       <navigation-icon />
     </span>
     <span class="label">New chat</span>
-  </button>
+  </router-link>
 </template>
 
 <script>
