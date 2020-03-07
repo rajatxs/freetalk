@@ -39,7 +39,7 @@
 <script>
   import { ArrowLeftIcon } from 'vue-feather-icons'
   import ActionIcon from '@/components/ActionIcon'
-  import router from '@/router'
+  import { routing } from '@/mixins'
   import Avatar from '@/components/Avatar'
   import { FrownIcon } from 'vue-feather-icons'
   import LoadingBar from '../components/LoadingBar'
@@ -47,6 +47,7 @@
 
   export default {
     name: 'peoples',
+    mixins: [routing],
 
     components: {
       'arrow-left-icon': ArrowLeftIcon,
@@ -64,7 +65,7 @@
     created() {
       firestore.collection('userdata').get().then(snapshot => {
         const { docs } = snapshot;
-        if (docs.length) {
+        if (docs.length !== 0) {
           docs.forEach(doc => {
             this.datalist.push(doc.data());
           })
@@ -73,11 +74,6 @@
           this.loadingStatus = false;
         }
       }).catch(() => this.loadingStatus = false);
-    },
-    methods: {
-      back() {
-        router.back();
-      }
     }
   }
 </script>

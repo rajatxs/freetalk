@@ -1,11 +1,11 @@
 <template>
   <section class="chats">
     <div class="topbar">
-      <router-link to="/" class="jump-previous-action">
+      <div class="jump-previous-action" @click="back">
         <action-icon colored>
           <arrow-left-icon />
         </action-icon>
-      </router-link>
+      </div>
       <router-link to="/user" class="target-profile">
         <div class="display-name"><h4>John albert</h4></div>
         <div class="last-access"><small>Active now</small></div>
@@ -37,9 +37,11 @@
   import { ArrowLeftIcon, SmileIcon, SendIcon } from 'vue-feather-icons'
   import ActionIcon from '@/components/ActionIcon'
   import Avatar from '@/components/Avatar'
+  import { routing } from '@/mixins'
 
   export default {
     name: 'chats', 
+    mixins: [routing],
  
     components: {
       Avatar, 
