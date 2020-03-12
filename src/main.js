@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 
 import { auth } from './firebase-init'
+import './registerServiceWorker'
 
 Vue.config.productionTip = true;
 
