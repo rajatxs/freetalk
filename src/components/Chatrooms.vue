@@ -1,6 +1,6 @@
 <template>
   <section class="chat-room">
-    <router-link to="/chats" class="instance" v-for="(room, i) in chatrooms" v-bind:key="i">
+    <router-link to="/chats" class="instance anchor-data-item" v-for="(room, i) in chatrooms" v-bind:key="i">
       <Avatar v-bind:src="room.avatar" />
       <div class="details">
         <h4 class="display-name">{{ room.uname }}</h4>
@@ -67,12 +67,7 @@
     display: grid;
     grid-template-columns: 5.5em auto;
     border-radius: 8px;
-    transition: background-color 0.1s linear, transform 0.15s ease;
   }
-  .chat-room .instance:active {
-   background-color: var(--rear-minor-blur);
-   transform: scale(0.98);
- }
   .chat-room .instance .avatar {
     height: 100%;
     width: auto;

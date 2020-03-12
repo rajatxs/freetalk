@@ -14,8 +14,8 @@
       <div class="data-list" v-if="datalist.length > 1">
         <router-link 
           tag="div" 
-          to="/users" 
-          class="person"
+          to="/chats" 
+          class="person anchor-data-item"
           v-for="(person, index) in datalist" 
           :key="index">
           <avatar :src="person.photoURL" :uname="person.displayName" />
@@ -37,13 +37,12 @@
 </template>
 
 <script>
-  import { ArrowLeftIcon } from 'vue-feather-icons'
+  import { ArrowLeftIcon, FrownIcon } from 'vue-feather-icons'
   import ActionIcon from '@/components/ActionIcon'
   import { routing } from '@/mixins'
   import Avatar from '@/components/Avatar'
-  import { FrownIcon } from 'vue-feather-icons'
-  import LoadingBar from '../components/LoadingBar'
-  import { firestore } from '../firebase-init'
+  import LoadingBar from '@/components/LoadingBar'
+  import { firestore } from '@/firebase-init'
 
   export default {
     name: 'peoples',
@@ -95,6 +94,7 @@
     display: flex;
     align-items: center;
     padding: 12px 1em;
+    cursor: pointer;
   }
   .peoples .container .data-list .person .detail {
     padding: 0 12px;

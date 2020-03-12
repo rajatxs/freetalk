@@ -75,6 +75,14 @@ body {
   color: var(--surface-fg-color);
 }
 
+@media screen and (min-width: 992px) {
+  body {
+    background-color: #EEE;
+    max-width: 60%;
+    margin: auto;
+  }
+}
+
 h1, h2, h3, h4 {
   margin: 0;
   padding: 8px;
@@ -132,6 +140,22 @@ button:active {
 }
 .image-container:active img {
     filter: brightness(0.75);
+}
+
+.anchor-data-item {
+  border-radius: 8px;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.1s linear;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-drag: none;
+  transition: background-color 0.1s linear, transform 0.15s ease;
+}
+.anchor-data-item:active {
+  background-color: var(--rear-minor-blur);
+  transform: scale(0.98);
 }
 
 .data-empty-error {

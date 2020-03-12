@@ -6,7 +6,6 @@ import Home from './views/Home'
 import Auth from './views/Auth'
 import Settings from './views/Settings'
 import Chats from './views/Chats'
-import Userprofile from './views/Userprofile'
 import Peoples from './views/Peoples'
 
 Vue.use(VueRouter);
@@ -31,11 +30,6 @@ const routes = [
     path: '/chats',
     name: 'chats',
     component: Chats
-  },
-  {
-    path: '/user',
-    name: 'userprofile',
-    component: Userprofile
   },
   {
     path: '/peoples',

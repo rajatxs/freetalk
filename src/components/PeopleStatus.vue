@@ -45,22 +45,6 @@
           {
             src: "https://avatars1.githubusercontent.com/u/1899599?s=400&v=4",
             uname: "Rukenshia"
-          },
-          {
-            src: "https://avatars1.githubusercontent.com/u/4060535?s=400&v=4",
-            uname: "Nick Goodall"
-          },
-          {
-            src: "https://avatars2.githubusercontent.com/u/470577?s=400&v=4",
-            uname: "Albert"
-          },
-          {
-            src: "https://avatars1.githubusercontent.com/u/43508?s=400&v=4",
-            uname: "Alessandro (Ale) Segala"
-          },
-          {
-            src: "https://avatars3.githubusercontent.com/u/1312807?s=400&v=4",
-            uname: "klaussner"
           }
         ]
       }

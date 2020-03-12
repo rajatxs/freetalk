@@ -6,10 +6,10 @@
           <arrow-left-icon />
         </action-icon>
       </div>
-      <router-link to="/user" class="target-profile">
+      <div class="target-profile">
         <div class="display-name"><h4>John albert</h4></div>
         <div class="last-access"><small>Active now</small></div>
-      </router-link>
+      </div>
       <div class="more-option image-container">
         <Avatar src="https://avatars1.githubusercontent.com/u/43508?s=400&v=4" />
       </div>
@@ -128,4 +128,13 @@
     background-color: transparent;
     border-color: var(--input-outline-color);
   }
+
+  @media screen and (min-width: 992px) {
+    .chats .factory {
+      width: auto;
+      left: 20%;
+      right: 20%;
+    }
+  }
+
 </style>

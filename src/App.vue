@@ -16,4 +16,10 @@
   #app {
     height: inherit;
   }
+  @media screen and (min-width: 992px) {
+    #app {
+      box-shadow: 0 2px 8px #CCC;
+      background-color: #FFF;
+    }
+  }
 </style>

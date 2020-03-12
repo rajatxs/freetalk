@@ -26,6 +26,7 @@
     padding: 8px;
     background-color: transparent;
     border-radius: 25px;
+    transition: background-color 0.15s linear;
   }
   .action-icon:active {
     background-color: var(--pcolor-focus);
