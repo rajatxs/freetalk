@@ -55,9 +55,11 @@ export default {
   height: auto;
 }
 .app-auth content {
-  padding: 1em 3em;
+  /* padding: 1em 3em; */
+  width: 60%;
   text-align: center;
   line-height: 1.4em;
+  color: var(--text-color-priority);
 }
 .app-auth .actions {
   display: flex;

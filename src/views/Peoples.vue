@@ -1,15 +1,6 @@
 <template>
   <div class="peoples">
-    <div class="topbar">
-      <div class="previous-page" @click="back">
-        <action-icon colored>
-          <arrow-left-icon />
-        </action-icon>
-      </div>
-      <header>
-        <h4>Peoples</h4>
-      </header>
-    </div>
+    <top-action-bar />
     <div class="container">
       <div class="data-list" v-if="datalist.length > 1">
         <router-link 
@@ -37,20 +28,17 @@
 </template>
 
 <script>
-  import { ArrowLeftIcon, FrownIcon } from 'vue-feather-icons'
-  import ActionIcon from '@/components/ActionIcon'
-  import { routing } from '@/mixins'
+  import { FrownIcon } from 'vue-feather-icons'
+  import TopActionBar from '@/components/TopActionBar'
   import Avatar from '@/components/Avatar'
   import LoadingBar from '@/components/LoadingBar'
   import { firestore } from '@/firebase-init'
 
   export default {
     name: 'peoples',
-    mixins: [routing],
 
     components: {
-      'arrow-left-icon': ArrowLeftIcon,
-      'action-icon': ActionIcon,
+      'top-action-bar': TopActionBar,
       'avatar': Avatar,
       'frown-icon': FrownIcon,
       'loading-bar': LoadingBar
@@ -82,13 +70,6 @@
     display: grid;
     grid-template-rows: 4.5em auto;
     height: inherit;
-  }
-  .peoples .topbar {
-    padding: 8px var(--base-margin);
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid var(--front-fg-minor-blur);
-    box-shadow: 0 1px 3px var(--front-fg-minor-blur);
   }
   .peoples .container .data-list .person {
     display: flex;

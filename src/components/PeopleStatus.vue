@@ -21,6 +21,7 @@
 
 <script>
   import Avatar from './Avatar'
+  import { mapActions } from 'vuex'
   import { PlusIcon } from 'vue-feather-icons'
 
   export default {
@@ -28,6 +29,12 @@
     components: {
       Avatar,
       'plus-icon': PlusIcon
+    },
+    methods: {
+      ...mapActions['updateColorScheme'],
+      setColorScheme() {
+        this.updateColorScheme('indigo');
+      }
     },
 
     data() {
